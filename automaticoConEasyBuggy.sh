@@ -18,5 +18,11 @@ sudo ./gradlew assembleDebug
 #Movemos el paquete fuera de todas las carpetas
 sudo cp ./app/build/outputs/apk/debug/app-debug.apk ../../
 
+#Easybuggy
+echo "Ejecutamos y compilamos easybuggy"
+cd ../../easybuggy/
+mvn clean compile
+mvn package
+
 
 
