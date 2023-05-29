@@ -7,7 +7,7 @@ sudo ./gradlew tasks
 
 #Analisis estatico con pmd
 echo "Creamos el analisis estatico"
-sudo /home/alumno/Escritorio/gpi2/pmd-bin-7.0.0-rc2/bin/pmd check -d . -R rulesets/java/quickstart.xml -f text > ../../analisiEstaticoMifare
+sudo /home/alumno/Escritorio/gpi2/pmd-bin-7.0.0-rc2/bin/pmd check -d . -R rulesets/java/quickstart.xml -f text > ../../analisiEstaticoMifareEasybuggy
 
 #pasamos los test
 echo "Pasamos los test"
@@ -17,6 +17,12 @@ echo "Pasamos los test"
 sudo ./gradlew assembleDebug
 #Movemos el paquete fuera de todas las carpetas
 sudo cp ./app/build/outputs/apk/debug/app-debug.apk ../../
+
+#Easybuggy
+echo "Ejecutamos y compilamos easybuggy"
+cd ../../easybuggy/
+mvn clean compile
+mvn package
 
 
 
