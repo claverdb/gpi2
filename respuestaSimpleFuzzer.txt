@@ -1,0 +1,487 @@
+[08:13:21] dumping options:
+	filename: <sfuzz-sample/easybuggy.cfg>
+	state:    <8>
+	lineno:   <35>
+	literals:  [6]
+	sequences: [0]
+	symbols: [1]
+	req_del:  <10000>
+	mseq_len: <0>
+	plugin: <none>
+	s_syms: <0>
+	literal[1] = [/]
+	literal[2] = [/../]
+	literal[3] = [/index.html]
+	literal[4] = [/sqlijc]
+	literal[5] = [/ognleijc]
+	literal[6] = [/codeijc]
+	sym [Set-Cookie:]->[Cookie:]
+[08:13:21] info: beginning fuzz - method: tcp, config from: [sfuzz-sample/easybuggy.cfg], out: [localhost:8080]
+[08:13:21] attempting fuzz - 1 (len: 90).
+[08:13:21] info: tx fuzz - (78 bytes) - scanning for reply.
+[08:13:31] read:
+HTTP/1.1 200 
+X-FRAME-OPTIONS: DENY
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Set-Cookie: JSESSIONID=85839B81455B6DB96AC7EF20386854F5; Path=/; HttpOnly
+Content-Type: text/html;charset=UTF-8
+Content-Language: es-ES
+Transfer-Encoding: chunked
+Date: Tue, 30 May 2023 06:13:21 GMT
+
+2000
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>EasyBuggy</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"
+    integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw" crossorigin="anonymous">
+<link rel="icon" type="image/vnd.microsoft.icon" href="/images/favicon.ico">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+    integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"
+    integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</head>
+<body style="margin-top: 20px; margin-left: 20px; margin-right: 20px;">
+    <header>
+        <table style="width: 720px;">
+            <tr>
+                <td><img src="images/easybuggy.png" class="bounceInRight animated" width="324px" height="116px" /></td>
+                <td><span class="glyphicon glyphicon-warning-sign"></span>&nbsp; Warning: Several links cause severe memory leaks or increase CPU usage rate. They can make your computer unstable.<br>The results may change depending on JRE type / version, JVM option, OS, hardware (memory, CPU) or etc.</td>
+            </tr>
+        </table>
+    </header>
+    <hr>
+    
+    <h2>
+        <span class="glyphicon glyphicon-knight"></span>&nbsp;
+        Troubles
+    </h2>
+    <p>
+        Memory leak, infinite loop, deadlock, and so on:
+    </p>
+    <ul>
+        <li><p>
+                <a href="deadlock">Deadlock (Java)</a>:
+                Deadlock (Java) can occur.
+            </p></li>
+        <li><p>
+                <a href="deadlock2">Deadlock (SQL)</a>:
+                Deadlock (SQL) can occur.
+            </p></li>
+        <li><p>
+                <a href="endlesswaiting">Endless Waiting Process</a>:
+                Endless waiting process can occur.
+            </p></li>
+        <li><p>
+                <a href="infiniteloop" target="_blank">Infinite Loop</a>:
+                Infinite loop occurs if you click this link.
+            </p></li>
+        <li><p>
+                <a href="redirectloop" target="_blank">Redirect Loop</a>:
+                Redirect loop occurs if you click this link.
+            </p></li>
+        <li><p>
+                <a href="forwardloop" target="_blank">Forward Loop</a>:
+                Forward loop occurs if you click this link.
+            </p></li>
+        <li><p>
+                <a href="jvmcrasheav" target="_blank">JVM Crash </a>:
+                JVM crashes if you click this link.
+            </p></li>
+        <li><p>
+                <a href="memoryleak">Memory Leak (Java heap space)</a>:
+                Memory leak occurs in Java heap space every time you load this page.
+            </p></li>
+        <li><p>
+                <a href="memoryleak2"> Memory Leak (Metaspace)
+                </a>:
+                Memory leak occurs in Metaspace every time you load this page.
+            </p></li>
+        <li><p>
+                <a href="memoryleak3">Memory Leak (C heap space)</a>:
+                Memory leak occurs in C heap space every time you load this page.
+            </p></li>
+        <li><p>
+                <a href="netsocketleak">Network Socket Leak</a>:
+                Network socket leak occurs every time you load this page.
+            </p></li>
+        <li><p>
+                <a href="dbconnectionleak ">Database Connection Leak</a> :
+                Database connection leak occurs every time you load the page.
+            </p></li>
+        <li><p>
+                <a href="filedescriptorleak ">File Descriptor Leak</a> :
+                File descriptor leak occurs every time you load this page.
+            </p></li>
+        <li><p>
+                <a href="threadleak">Thread Leak</a>:
+                Thread leak occurs every time you load this page.
+            </p></li>
+        <li><p>
+                <a href="mojibake">Mojibake</a>:
+                Mojibake can occur.
+            </p></li>
+        <li><p>
+                <a href="iof">Integer Overflow</a>:
+                Integer overflow can occur.
+            </p></li>
+        <li><p>
+                <a href="roe">Round Off Error</a>:
+                Round off error can occur.
+            </p></li>
+        <li><p>
+                <a href="te">Truncation Error</a>:
+                Truncation error can occur.
+            </p></li>
+        <li><p>
+                <a href="lotd">Loss of Trailing Digits</a>:
+                Loss of trailing digits can occur.
+            </p></li>
+    </ul>
+    
+
+    <h2>
+        <span class="glyphicon glyphicon-knight"></span>&nbsp;
+        Vulnerabilities
+    </h2>
+    <p>
+        XSS, SQL Injection, LDAP injection, and so on:
+    </p>
+    <ul>
+        <li><p>
+                <a href="xss">XSS (Cross Site Scripting)</a>:
+                There is a cross site scripting vulnerability in this page.
+            </p></li>
+        <li><p>
+                <a href="sqlijc">SQL Injection</a>:
+                There is an SQL injection vulnerability in this page.
+            </p></li>
+        <li><p>
+                <a href="admins/main?logintype=ldapijc">LDAP Injection</a>:
+                There is an LDAP injection vulnerability in this page.
+            </p></li>
+        <li><p>
+                <a href="codeijc">Code Injection</a>:
+                There is a code injection vulnerability in this page.
+            </p></li>
+        <li><p>
+                <a href="ognleijc">OS Command Injection</a>:
+                There is an OS command injection vulnerability in this page.
+            </p></li>
+        <li><p>
+                <a href="mailheaderijct">Mail Header Injection</a>:
+                There is a mail header injection vulnerability in this page.
+            </p></li>
+        <li><p>
+                <a href="nullbyteijct">Null Byte Injection</a>:
+                There is a null byte injection vulnerability in this page.
+            </p></li>
+        <li><p>
+                <a href="ursupload">Size Unrestricted File Upload</a>:
+                This page is vulnerable for attacks such as DoS because there are no limitation for uploading file size.
+            </p></li>
+        <li><p>
+                <a href="ureupload">Extension Unrestricted File Upload</a>:
+                This page is vulnerable for attacks such as code injection because there are no limitation for uploading file extension.
+            </p></li>
+        <li><p>
+                <a href="admins/main?logintype=openredirect&amp;goto=/uid/serverinfo.jsp">Login page that allows Open Redirect</a>:
+                There is an open redirect vulnerability in this login page.
+            </p></li>
+        <li><p>
+                <a href="admins/main?logintype=bruteforce">Login page that allows brute-force attacks</a>:
+                This login page is vulnerable for brute-force attack because it does not have an account lock mechanism.
+            </p></li>
+        <li><p>
+                <a href="admins/main;jsessionid=85839B81455B6DB96AC7EF20386854F5?logintype=sessionfixation">Login page that allows session fixation attacks</a>:
+                This login page is vulnerable for session fixation attack.
+            </p></li>
+        <li><p>
+                <a href="admins/main?logintype=verbosemsg">Verbose Aut
+===============================================================================
+[08:13:31] attempting fuzz - 2 (len: 96).
+[08:13:31] info: tx fuzz - (84 bytes) - scanning for reply.
+[08:13:41] read:
+HTTP/1.1 200 
+X-FRAME-OPTIONS: DENY
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Set-Cookie: JSESSIONID=431B58C223C1630C4801AE3AAE4EE9A3; Path=/; HttpOnly
+Content-Type: text/html;charset=UTF-8
+Content-Language: es-ES
+Date: Tue, 30 May 2023 06:13:31 GMT
+Connection: close
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>EasyBuggy</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"
+    integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw" crossorigin="anonymous">
+<link rel="icon" type="image/vnd.microsoft.icon" href="/images/favicon.ico">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+    integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"
+    integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</head>
+<body style="margin-top: 20px; margin-left: 20px; margin-right: 20px;">
+    <header>
+        <table style="width: 720px;">
+            <tr>
+                <td><img src="images/easybuggy.png" class="bounceInRight animated" width="324px" height="116px" /></td>
+                <td><span class="glyphicon glyphicon-warning-sign"></span>&nbsp; Warning: Several links cause severe memory leaks or increase CPU usage rate. They can make your computer unstable.<br>The results may change depending on JRE type / version, JVM option, OS, hardware (memory, CPU) or etc.</td>
+            </tr>
+        </table>
+    </header>
+    <hr>
+    
+    <h2>
+        <span class="glyphicon glyphicon-knight"></span>&nbsp;
+        Troubles
+    </h2>
+    <p>
+        Memory leak, infinite loop, deadlock, and so on:
+    </p>
+    <ul>
+        <li><p>
+                <a href="deadlock">Deadlock (Java)</a>:
+                Deadlock (Java) can occur.
+            </p></li>
+        <li><p>
+                <a href="deadlock2">Deadlock (SQL)</a>:
+                Deadlock (SQL) can occur.
+            </p></li>
+        <li><p>
+                <a href="endlesswaiting">Endless Waiting Process</a>:
+                Endless waiting process can occur.
+            </p></li>
+        <li><p>
+                <a href="infiniteloop" target="_blank">Infinite Loop</a>:
+                Infinite loop occurs if you click this link.
+            </p></li>
+        <li><p>
+                <a href="redirectloop" target="_blank">Redirect Loop</a>:
+                Redirect loop occurs if you click this link.
+            </p></li>
+        <li><p>
+                <a href="forwardloop" target="_blank">Forward Loop</a>:
+                Forward loop occurs if you click this link.
+            </p></li>
+        <li><p>
+                <a href="jvmcrasheav" target="_blank">JVM Crash </a>:
+                JVM crashes if you click this link.
+            </p></li>
+        <li><p>
+                <a href="memoryleak">Memory Leak (Java heap space)</a>:
+                Memory leak occurs in Java heap space every time you load this page.
+            </p></li>
+        <li><p>
+                <a href="memoryleak2"> Memory Leak (Metaspace)
+                </a>:
+                Memory leak occurs in Metaspace every time you load this page.
+            </p></li>
+        <li><p>
+                <a href="memoryleak3">Memory Leak (C heap space)</a>:
+                Memory leak occurs in C heap space every time you load this page.
+            </p></li>
+        <li><p>
+                <a href="netsocketleak">Network Socket Leak</a>:
+                Network socket leak occurs every time you load this page.
+            </p></li>
+        <li><p>
+                <a href="dbconnectionleak ">Database Connection Leak</a> :
+                Database connection leak occurs every time you load the page.
+            </p></li>
+        <li><p>
+                <a href="filedescriptorleak ">File Descriptor Leak</a> :
+                File descriptor leak occurs every time you load this page.
+            </p></li>
+        <li><p>
+                <a href="threadleak">Thread Leak</a>:
+                Thread leak occurs every time you load this page.
+            </p></li>
+        <li><p>
+                <a href="mojibake">Mojibake</a>:
+                Mojibake can occur.
+            </p></li>
+        <li><p>
+                <a href="iof">Integer Overflow</a>:
+                Integer overflow can occur.
+            </p></li>
+        <li><p>
+                <a href="roe">Round Off Error</a>:
+                Round off error can occur.
+            </p></li>
+        <li><p>
+                <a href="te">Truncation Error</a>:
+                Truncation error can occur.
+            </p></li>
+        <li><p>
+                <a href="lotd">Loss of Trailing Digits</a>:
+                Loss of trailing digits can occur.
+            </p></li>
+    </ul>
+    
+
+    <h2>
+        <span class="glyphicon glyphicon-knight"></span>&nbsp;
+        Vulnerabilities
+    </h2>
+    <p>
+        XSS, SQL Injection, LDAP injection, and so on:
+    </p>
+    <ul>
+        <li><p>
+                <a href="xss">XSS (Cross Site Scripting)</a>:
+                There is a cross site scripting vulnerability in this page.
+            </p></li>
+        <li><p>
+                <a href="sqlijc">SQL Injection</a>:
+                There is an SQL injection vulnerability in this page.
+            </p></li>
+        <li><p>
+                <a href="admins/main?logintype=ldapijc">LDAP Injection</a>:
+                There is an LDAP injection vulnerability in this page.
+            </p></li>
+        <li><p>
+                <a href="codeijc">Code Injection</a>:
+                There is a code injection vulnerability in this page.
+            </p></li>
+        <li><p>
+                <a href="ognleijc">OS Command Injection</a>:
+                There is an OS command injection vulnerability in this page.
+            </p></li>
+        <li><p>
+                <a href="mailheaderijct">Mail Header Injection</a>:
+                There is a mail header injection vulnerability in this page.
+            </p></li>
+        <li><p>
+                <a href="nullbyteijct">Null Byte Injection</a>:
+                There is a null byte injection vulnerability in this page.
+            </p></li>
+        <li><p>
+                <a href="ursupload">Size Unrestricted File Upload</a>:
+                This page is vulnerable for attacks such as DoS because there are no limitation for uploading file size.
+            </p></li>
+        <li><p>
+                <a href="ureupload">Extension Unrestricted File Upload</a>:
+                This page is vulnerable for attacks such as code injection because there are no limitation for uploading file extension.
+            </p></li>
+        <li><p>
+                <a href="admins/main?logintype=openredirect&amp;goto=/uid/serverinfo.jsp">Login page that allows Open Redirect</a>:
+                There is an open redirect vulnerability in this login page.
+            </p></li>
+        <li><p>
+                <a href="admins/main?logintype=bruteforce">Login page that allows brute-force attacks</a>:
+                This login page is vulnerable for brute-force attack because it does not have an account lock mechanism.
+            </p></li>
+        <li><p>
+                <a href="admins/main;jsessionid=431B58C223C1630C4801AE3AAE4EE9A3?logintype=sessionfixation">Login page that allows session fixation attacks</a>:
+                This login page is vulnerable for session fixation attack.
+            </p></li>
+        <li><p>
+                <a href="admins/main?logintype=verbosemsg">Verbose Authentication Err
+===============================================================================
+[08:13:41] attempting fuzz - 3 (len: 99).
+[08:13:41] info: tx fuzz - (87 bytes) - scanning for reply.
+[08:13:51] read:
+HTTP/1.1 400 
+Content-Type: text/html;charset=utf-8
+Content-Language: es
+Content-Length: 670
+Date: Tue, 30 May 2023 06:13:41 GMT
+Connection: close
+
+<!doctype html><html lang="es"><head><title>Estado HTTP 400 – Bad Request</title><style type="text/css">body {font-family:Tahoma,Arial,sans-serif;} h1, h2, h3, b {color:white;background-color:#525D76;} h1 {font-size:22px;} h2 {font-size:16px;} h3 {font-size:14px;} p {font-size:12px;} a {color:black;} .line {height:1px;background-color:#525D76;border:none;}</style></head><body><h1>Estado HTTP 400 – Bad Request</h1><hr class="line" /><p><b>Tipo</b> Informe de estado</p><p><b>mensaje</b> Invalid URI</p><p><b>Descripción</b> El requerimiento enviado por el cliente era sintácticamente incorrecto.</p><hr class="line" /><h3>Apache Tomcat/8.5.87</h3></body></html>
+===============================================================================
+[08:13:51] attempting fuzz - 4 (len: 106).
+[08:13:51] info: tx fuzz - (94 bytes) - scanning for reply.
+[08:14:01] read:
+HTTP/1.1 404 
+X-FRAME-OPTIONS: DENY
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Content-Type: text/html;charset=utf-8
+Content-Language: es
+Content-Length: 697
+Date: Tue, 30 May 2023 06:13:51 GMT
+Connection: close
+
+<!doctype html><html lang="es"><head><title>Estado HTTP 404 – No encontrado</title><style type="text/css">body {font-family:Tahoma,Arial,sans-serif;} h1, h2, h3, b {color:white;background-color:#525D76;} h1 {font-size:22px;} h2 {font-size:16px;} h3 {font-size:14px;} p {font-size:12px;} a {color:black;} .line {height:1px;background-color:#525D76;border:none;}</style></head><body><h1>Estado HTTP 404 – No encontrado</h1><hr class="line" /><p><b>Tipo</b> Informe de estado</p><p><b>mensaje</b> El recurso requerido [&#47;index.html] no se encuentra disponible</p><p><b>Descripción</b> El recurso requerido no está disponible.</p><hr class="line" /><h3>Apache Tomcat/8.5.87</h3></body></html>
+===============================================================================
+[08:14:01] attempting fuzz - 5 (len: 102).
+[08:14:01] info: tx fuzz - (90 bytes) - scanning for reply.
+[08:14:11] read:
+HTTP/1.1 200 
+X-FRAME-OPTIONS: DENY
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Set-Cookie: JSESSIONID=DDA7400D452A00DE00C036C907D803AF; Path=/; HttpOnly
+Content-Type: text/html;charset=UTF-8
+Content-Length: 2317
+Date: Tue, 30 May 2023 06:14:01 GMT
+Connection: close
+
+<HTML><HEAD><TITLE>Search Your Secret Number</TITLE><link rel="icon" type="image/vnd.microsoft.icon" href="/images/favicon.ico"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" integrity="sha384-3+mjTIH6k3li4tycpEniAI83863YpLyJGB/hdI15inFZcAQK3IeMdXSgnoPkTzHn" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script></HEAD><BODY STYLE="margin-left:20px;margin-right:20px;"><table style="width:100%;"><tr><td><h2><span class="glyphicon glyphicon-globe"></span>&nbsp;Search Your Secret Number</h2></td><td align="right"><a href="/">Go to main page</a></td></tr></table><hr style="margin-top:0px"><form action="sqlijc" method="post">When you enter your name and password, your secret number is shown.<br><br>Name: <input type="text" name="name" size="20" maxlength="20">&nbsp;&nbsp;Password: <input type="password" name="password" size="20" maxlength="20" autocomplete="off"><br><br><input type="submit" value="Submit"><br><br>Please enter your name and password.<br><br><div class="alert alert-info" role="alert"><span class="glyphicon glyphicon-info-sign"></span>&nbsp; You can see a secret number if you enter <code>Mark</code> and <code>password</code>. You can see other users information if you enter password to <code>' OR '1'='1</code></div></form></BODY></HTML>
+===============================================================================
+[08:14:11] attempting fuzz - 6 (len: 104).
+[08:14:11] info: tx fuzz - (92 bytes) - scanning for reply.
+[08:14:21] read:
+HTTP/1.1 200 
+X-FRAME-OPTIONS: DENY
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Set-Cookie: JSESSIONID=B42A9AA4212902DA54021C77065B7820; Path=/; HttpOnly
+Content-Type: text/html;charset=UTF-8
+Content-Length: 2255
+Date: Tue, 30 May 2023 06:14:11 GMT
+Connection: close
+
+<HTML><HEAD><TITLE>Performing Basic Numeric Operations</TITLE><link rel="icon" type="image/vnd.microsoft.icon" href="/images/favicon.ico"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" integrity="sha384-3+mjTIH6k3li4tycpEniAI83863YpLyJGB/hdI15inFZcAQK3IeMdXSgnoPkTzHn" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script></HEAD><BODY STYLE="margin-left:20px;margin-right:20px;"><table style="width:100%;"><tr><td><h2><span class="glyphicon glyphicon-globe"></span>&nbsp;Performing Basic Numeric Operations</h2></td><td align="right"><a href="/">Go to main page</a></td></tr></table><hr style="margin-top:0px"><form action="ognleijc" method="post">Please enter a mathematical expression. You can use <code>java.lang.Math</code> in the expression. For example, <code>Math.sqrt(Math.pow(2, 6)) - 5</code><br><br><input type="text" name="expression" size="80" maxlength="300"> = <br><br><input type="submit" value="Calculate"><br><br><div class="alert alert-info" role="alert"><span class="glyphicon glyphicon-info-sign"></span>&nbsp; If you enter <code>@Runtime@getRuntime().exec('rm -fr /your-important-dir/')</code> , then your important directory is removed on your server.</div></form></BODY></HTML>
+===============================================================================
+[08:14:21] attempting fuzz - 7 (len: 103).
+[08:14:21] info: tx fuzz - (91 bytes) - scanning for reply.
+[08:14:31] read:
+HTTP/1.1 200 
+X-FRAME-OPTIONS: DENY
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Set-Cookie: JSESSIONID=80AF9278A23D179A212EBE3718E4AE4D; Path=/; HttpOnly
+Content-Type: text/html;charset=UTF-8
+Content-Length: 2146
+Date: Tue, 30 May 2023 06:14:21 GMT
+Connection: close
+
+<HTML><HEAD><TITLE>Parse JSON</TITLE><link rel="icon" type="image/vnd.microsoft.icon" href="/images/favicon.ico"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" integrity="sha384-3+mjTIH6k3li4tycpEniAI83863YpLyJGB/hdI15inFZcAQK3IeMdXSgnoPkTzHn" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script></HEAD><BODY STYLE="margin-left:20px;margin-right:20px;"><table style="width:100%;"><tr><td><h2><span class="glyphicon glyphicon-globe"></span>&nbsp;Parse JSON</h2></td><td align="right"><a href="/">Go to main page</a></td></tr></table><hr style="margin-top:0px"><form action="codeijc" method="post">When you enter a JSON string, a result checked by JSON.parse() of JavaScript is shown.<br><br>JSON String: <textarea name="jsonString" cols="80" rows="15"></textarea><br><br><input type="submit" value="Submit"><br><br>Please enter JSON string.<br><br><div class="alert alert-info" role="alert"><span class="glyphicon glyphicon-info-sign"></span>&nbsp; If you enter <code>{}');java.lang.System.exit(0);//</code> , then JavaVM is forcibly finished due to code injection.</div></form></BODY></HTML>
+===============================================================================
+[08:14:31] completed fuzzing.
